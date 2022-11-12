@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import { AppContainer } from 'react-hot-loader';//去掉惹更新组件，目的在学习，暂时去掉代码更清晰
 import { LocaleProvider } from 'antd';
 import koKR from 'antd/lib/locale-provider/ko_KR';
 import enUS from 'antd/lib/locale-provider/en_US';
@@ -14,6 +14,7 @@ const antResources = {
 	'ko-KR': koKR,
 	en: enUS,
 	'en-US': enUS,
+	
 };
 
 const root = document.createElement('div');
@@ -23,11 +24,11 @@ document.body.appendChild(root);
 const render = Component => {
 	const rootElement = document.getElementById('root');
 	ReactDom.render(
-		<AppContainer>
+		
 			<LocaleProvider locale={antResources[i18next.language]}>
 				<Component />
 			</LocaleProvider>
-		</AppContainer>,
+		, 
 		rootElement,
 	);
 };
